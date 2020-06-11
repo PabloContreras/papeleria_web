@@ -90,3 +90,6 @@ FOREIGN KEY(turista_id) REFERENCES turista(id)
 
 ALTER TABLE `blog`
 MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+
+insert into admins values(1, 'Pablo Contreras', 'pablo_contreras_1997@outlook.com', 'Lapatita9');
