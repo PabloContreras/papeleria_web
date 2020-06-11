@@ -3,8 +3,8 @@
 	//include_once './views/base/conn.php';
 	// Connection variables
 	$dbhost	= "localhost";	   // localhost or IP
-	$dbuser	= "root";		  // database username
-	$dbpass	= "";		     // database password
+	$dbuser	= "admin";		  // database username
+	$dbpass	= "admin";		     // database password
 	$dbname	= "project";    // database name
 	
 	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
