@@ -21,7 +21,7 @@ MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 */
 CREATE TABLE `turista` (
 `id` int(99) NOT NULL,
-`admin_id` int(99) NOT NULL FOREIGN KEY REFERENCES admins(id),
+`admin_id` int(99) NOT NULL, FOREIGN KEY(id) REFERENCES admins(id),
 `Name` varchar(300) NOT NULL,
 `Email` varchar(300) NOT NULL,
 `Password` varchar(450) NOT NULL
@@ -49,13 +49,13 @@ ADD PRIMARY KEY (`id`);
 ALTER TABLE `videojuegos`
 MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 /*
-**		Tabla videojuegos
+**		Tabla animales
 */
 CREATE TABLE `animales` (
 `id` int(99) NOT NULL,
 `Nombre` varchar(300) NOT NULL,
 `Genero` varchar(300) NOT NULL,
-`turista_id` int(99) NOT NULL FOREIGN KEY REFERENCES turista(id),
+`turista_id` int(99) NOT NULL FOREIGN KEY(id) REFERENCES turista(id),
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 ALTER TABLE `animales`
@@ -70,7 +70,7 @@ CREATE TABLE `pais` (
 `id` int(99) NOT NULL,
 `Nombre` varchar(300) NOT NULL,
 `Clima` varchar(300) NOT NULL,
-`turista_id` int(99) NOT NULL FOREIGN KEY REFERENCES turista(id),
+`turista_id` int(99) NOT NULL FOREIGN KEY(id) REFERENCES turista(id),
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 ALTER TABLE `pais`
@@ -84,7 +84,7 @@ MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 CREATE TABLE `blog` (
 `id` int(99) NOT NULL,
 `content` varchar(300) NOT NULL,
-`turista_id` int(99) NOT NULL FOREIGN KEY REFERENCES turista(id),
+`turista_id` int(99) NOT NULL FOREIGN KEY (id) REFERENCES turista(id),
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 ALTER TABLE `blog`

@@ -4,4 +4,12 @@
 	$dbuser	= "root";		  // database username
 	$dbpass	= "";		     // database password
 	$dbname	= "project";    // database name
+
+	try {
+	
+		$con=new PDO('mysql:host=localhost;dbname='.$dbname,$dbuser,$dbpass);
+	
+	} catch (PDOException $e) {
+		echo "Error".$e->getMessage();
+	}
 ?>
