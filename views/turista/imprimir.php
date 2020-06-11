@@ -21,7 +21,7 @@ session_start();
     <?php
   
 
-        include_once 'conn.php';
+        include_once '../base/conn.php';
 
 	$sentencia_select=$con->prepare('SELECT *FROM turista ORDER BY id DESC');
 	$sentencia_select->execute();

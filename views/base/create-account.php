@@ -17,7 +17,7 @@
 
 	include_once '../base/conn.php';
 
-	$conn = mysqli_connect($dbhost, $bduser, $dbpass, $dbname);
+	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
 	// Check connection
 	if (!$conn) {

@@ -1,5 +1,5 @@
 <?php 
-	include_once 'conexion.php';
+	include_once '../base/conn.php';
 	
 	if(isset($_POST['guardar'])){
 		$nombre=$_POST['nombre'];
@@ -62,7 +62,7 @@
 					required minlength="5" , maxlength="50" require>
 			</div>
 			<div class="btn__group">
-				<a href="imprimir.php" class="btn btn__danger">Cancelar</a>
+				<a href="../imprimir.php" class="btn btn__danger">Cancelar</a>
 				<input type="submit" name="guardar" value="Guardar" class="btn btn__primary">
 			</div>
 		</form>
