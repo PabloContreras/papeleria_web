@@ -21,14 +21,14 @@ MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 */
 CREATE TABLE `turista` (
 `id` int(99) NOT NULL,
-`admin_id` int(99) NOT NULL, FOREIGN KEY(id) REFERENCES admins(id),
+`admin_id` int(99) NOT NULL,
 `Name` varchar(300) NOT NULL,
 `Email` varchar(300) NOT NULL,
-`Password` varchar(450) NOT NULL
+`Password` varchar(450) NOT NULL,
+PRIMARY KEY(id),
+FOREIGN KEY(admin_id) REFERENCES admins(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-ALTER TABLE `turista`
-ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `turista`
 MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
@@ -37,14 +37,14 @@ MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 */
 CREATE TABLE `videojuegos` (
 `id` int(99) NOT NULL,
+`turista_id` int(99) NOT NULL,
 `Nombre` varchar(300) NOT NULL,
 `Precio` varchar(300) NOT NULL,
-`consola` varchar(450) NOT NULL
-`turista_id` int(99) NOT NULL FOREIGN KEY REFERENCES turista(id),
+`consola` varchar(450) NOT NULL,
+PRIMARY KEY (id),
+FOREIGN KEY(turista_id) REFERENCES turista(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-ALTER TABLE `videojuegos`
-ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `videojuegos`
 MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
@@ -53,13 +53,13 @@ MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 */
 CREATE TABLE `animales` (
 `id` int(99) NOT NULL,
+`turista_id` int(99) NOT NULL,
 `Nombre` varchar(300) NOT NULL,
 `Genero` varchar(300) NOT NULL,
-`turista_id` int(99) NOT NULL FOREIGN KEY(id) REFERENCES turista(id),
+PRIMARY KEY (id),
+FOREIGN KEY(turista_id) REFERENCES turista(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-ALTER TABLE `animales`
-ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `animales`
 MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
@@ -68,13 +68,12 @@ MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 */
 CREATE TABLE `pais` (
 `id` int(99) NOT NULL,
+`turista_id` int(99) NOT NULL,
 `Nombre` varchar(300) NOT NULL,
 `Clima` varchar(300) NOT NULL,
-`turista_id` int(99) NOT NULL FOREIGN KEY(id) REFERENCES turista(id),
+PRIMARY KEY (id),
+FOREIGN KEY(turista_id) REFERENCES turista(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-ALTER TABLE `pais`
-ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `pais`
 MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
@@ -83,12 +82,11 @@ MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 */
 CREATE TABLE `blog` (
 `id` int(99) NOT NULL,
+`turista_id` int(99) NOT NULL,
 `content` varchar(300) NOT NULL,
-`turista_id` int(99) NOT NULL FOREIGN KEY (id) REFERENCES turista(id),
+PRIMARY KEY (id),
+FOREIGN KEY(turista_id) REFERENCES turista(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-ALTER TABLE `blog`
-ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `blog`
 MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;

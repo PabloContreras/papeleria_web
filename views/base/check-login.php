@@ -1,27 +1,10 @@
 <?php
-session_start();
-?>
-
-<!doctype html>
-<html lang="en">
-	<head>
-		<title>Check Login and create session</title>
-		<!-- Required meta tags -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-	</head>
-	<body>
-		<div class="container">
-		
-			<?php
-			// Connection info. file
-			include_once 'conn.php';	
-			
-			// Connection variables
-			$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+	session_start();
+	// Connection info. file
+	include_once '/views/base/conn.php';	
+	
+	// Connection variables
+	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 			
 	
 			// Check connection
