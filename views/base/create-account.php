@@ -27,7 +27,7 @@
 	if ($count == 1) {
 	echo "<div class='alert alert-warning mt-4' role='alert'>
 					<p>Ese correo ya esta registrado.Por Favor intenta registrarte con otro o intenta iniciar sesion</p>
-					<p><a href='/'>Login</a></p>
+					<p><a href='index.html'>Login</a></p>
 				</div>";
 	} else {	
 	
