@@ -46,7 +46,9 @@
 	$query = "INSERT INTO turista(admin_id, Name, Email, Password) VALUES (1, '$name', '$email', '$passHash')";
 
 	if (mysqli_query($conn, $query)) {
-			header("Location: /proWeb/papeleria_web-master/");		
+			header("Location: /proWeb/papeleria_web-master/");	
+			//header("Location: /proWeb/papeleria_web-master/"):
+
 		} else {
 			echo "Error: " . $query . "<br>" . mysqli_error($conn);
 		}	

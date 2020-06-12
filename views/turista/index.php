@@ -6,6 +6,7 @@
   	<head>
 	    <title>Bienvenido | <?php echo $_SESSION['name']; ?></title>
 		<link rel="stylesheet" href="/proWeb/papeleria_web-master/css/bootstrap.min.css">
+		<!-- <link rel="stylesheet" href="/proWeb/papeleria_web-master/css/bootstrap.min.css"> -->
 	    <!-- Required meta tags -->
 	    <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,7 +15,8 @@
   
   	<body>      
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-			<a class="navbar-brand" href="/views/turista/index.php"><i class="fas fa-home"></i></a>
+			<a class="navbar-brand" href="/proWeb/papeleria_web-master/views/turista/index.php"><i class="fas fa-home"></i></a>
+			<!-- <a class="navbar-brand" href="/proWeb/papeleria_web-master/views/turista/index.php"><i class="fas fa-home"></i></a> -->
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
   			</button>
@@ -24,7 +26,7 @@
 			        	<a class="nav-link" href="#">Mascotas</a>
 			      	</li>
 			      	<li class="nav-item">
-			        	<a class="nav-link" href="#">País</a>
+			        	<a class="nav-link" href="/proWeb/papeleria_web-master/views/pais/">País</a>
 			      	</li>
 			      	<li class="nav-item">
 			        	<a class="nav-link" href="#">Videojuegos</a>
@@ -38,8 +40,9 @@
 				<div class="btn-group" role="group">
 				    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['name']; ?></button>
 				    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-				    	<a class="dropdown-item" href="">Perfil</a>
-				    	<a class="dropdown-item" href="/views/base/logout.php">Salir</a>
+						<a class="dropdown-item" href="">Perfil</a>
+						<!-- <a class="dropdown-item" href="/proWeb/papeleria_web-master/views/base/logout.php">Salir</a> -->
+				    	<a class="dropdown-item" href="/proWeb/papeleria_web-master/views/base/logout.php">Salir</a>
 				    </div>
 				</div>
 			</div>
@@ -59,8 +62,9 @@
 					<div class="col-lg-5">
 						<a href="" style="text-decoration: none;">
 							<div class="card border-primary mb-3">
-								<div class="card-body">
-							    	<h4 class="card-title text-center">País</h4>
+								<div class="card-body" >
+									<h4 class="card-title text-center" > <a href="/proWeb/papeleria_web-master/views/pais/">País</a> </h4> 
+									
 							  	</div>
 							</div>
 						</a>

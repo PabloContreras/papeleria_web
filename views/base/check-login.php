@@ -28,9 +28,11 @@
 		$_SESSION['start'] = time();
 		$_SESSION['expire'] = $_SESSION['start'] + (10 * 60);
 		header("Location: /proWeb/papeleria_web-master/views/turista/index.php");
+		//header("Location: /proWeb/papeleria_web-master/views/turista/index.php");
 	
 	} else {
 		header("Location: /proWeb/papeleria_web-master/");
+		//header("Location: /proWeb/papeleria_web-master/");
 	}
 
 
