@@ -5,7 +5,7 @@
 <html lang="en">
   	<head>
 	    <title>Bienvenido | <?php echo $_SESSION['name']; ?></title>
-		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css">
 	    <!-- Required meta tags -->
 	    <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,7 +27,7 @@
 			        	<a class="nav-link" href="#">País</a>
 			      	</li>
 			      	<li class="nav-item">
-			        	<a class="nav-link" href="#">Videojuegos</a>
+			        	<a class="nav-link" href="../videojuegos/portfolio.php">Videojuegos</a>
 			      	</li>
 			      	<li class="nav-item">
 			        	<a class="nav-link" href="#">Notas</a>
@@ -68,7 +68,7 @@
 				</div>
 				<div class="row justify-content-center mt-5"> 
 					<div class="col-lg-5">
-						<a href="" style="text-decoration: none;">
+						<a href="../videojuegos/portfolio.php" style="text-decoration: none;">
 							<div class="card border-primary mb-3">
 								<div class="card-body">
 							    	<h4 class="card-title text-center">Videojuegos</h4>
