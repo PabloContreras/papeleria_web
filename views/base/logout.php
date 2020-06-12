@@ -5,5 +5,6 @@ session_start();
 session_unset($_SESSION['email']);
 session_destroy();
 
-header("location: /proWeb/papeleria_web-master/");
+header("location: /");
+//header("location: /proWeb/papeleria_web-master/");
 ?>

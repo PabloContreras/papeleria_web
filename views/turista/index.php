@@ -5,7 +5,7 @@
 <html lang="en">
   	<head>
 	    <title>Bienvenido | <?php echo $_SESSION['name']; ?></title>
-		<link rel="stylesheet" href="/proWeb/papeleria_web-master/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
 		<!-- <link rel="stylesheet" href="/proWeb/papeleria_web-master/css/bootstrap.min.css"> -->
 	    <!-- Required meta tags -->
 	    <meta charset="utf-8">
@@ -15,7 +15,7 @@
   
   	<body>      
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-			<a class="navbar-brand" href="/proWeb/papeleria_web-master/views/turista/index.php"><i class="fas fa-home"></i></a>
+			<a class="navbar-brand" href="/views/turista/index.php"><i class="fas fa-home"></i></a>
 			<!-- <a class="navbar-brand" href="/proWeb/papeleria_web-master/views/turista/index.php"><i class="fas fa-home"></i></a> -->
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@
 			        	<a class="nav-link" href="#">Mascotas</a>
 			      	</li>
 			      	<li class="nav-item">
-			        	<a class="nav-link" href="/proWeb/papeleria_web-master/views/pais/">País</a>
+			        	<a class="nav-link" href="/views/pais/">País</a>
 			      	</li>
 			      	<li class="nav-item">
 			        	<a class="nav-link" href="#">Videojuegos</a>
@@ -42,7 +42,7 @@
 				    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
 						<a class="dropdown-item" href="">Perfil</a>
 						<!-- <a class="dropdown-item" href="/proWeb/papeleria_web-master/views/base/logout.php">Salir</a> -->
-				    	<a class="dropdown-item" href="/proWeb/papeleria_web-master/views/base/logout.php">Salir</a>
+				    	<a class="dropdown-item" href="/views/base/logout.php">Salir</a>
 				    </div>
 				</div>
 			</div>
