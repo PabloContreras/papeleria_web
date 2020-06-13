@@ -1,9 +1,13 @@
 <?php
 require '/scripts/blog.sql'
-try{
-    $conn = new PDO ('$servername; $dbname', 'root', '');
-}catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
+if($_SERVER['REQUEST_METHOD'] == 'POST')
+{
+    try{
+        $conn = new PDO ('$servername; $dbname', 'root', '');
+    }catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+    $statement = $conn->prepare('INSERT INTO blog (id, turista_id, content) VALUES (null, :turista_id, :content');
+    $statement->execute(array(':turista_id'=>$turista_id, ':content'=>$content));
 }
-$statement = $conn->prepare('INSERT INTO blog (id, turista_id, content)');
 ?> 
