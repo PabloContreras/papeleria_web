@@ -1,48 +1,49 @@
 <?php
 
-    include_once '../database.php';
+    include_once '../base/conn.php';
 
     if(isset($_GET['id'])) {
         $id = (int) $_GET['id'];
         
-        $buscar_id = $conn->prepare('SELECT * FROM videogames WHERE id=:id LIMIT 1');
+        $buscar_id = $conn->prepare('SELECT * FROM videojuegos WHERE id=:id LIMIT 1');
         $buscar_id -> execute(array(
             ':id'=>$id
         ));
         $result = $buscar_id->fetch();
     }else {
-        header('Location: /proyectou3y4/portfolio.php');
+        header('Location: /papeleria_web/views/videojuegos/index.php');
     }
 
 
     if(isset($_POST['editar'])) {
-        $name = $_POST['name'];
-        $price = $_POST['price'];
-        $console = $_POST['console'];
-        $description = $_POST['description'];
+        $nombre = $_POST['nombre'];
+        $precio = $_POST['precio'];
+        $consola = $_POST['consola'];
+        $descripcion = $_POST['descripcion'];
         $id = $_GET['id'];
 
-        if (!empty($name) && !empty($price) && !empty($console) && !empty($description)) {
+        if (!empty($nombre) && !empty($precio) && !empty($consola) && !empty($descripcion)) {
 
-            $consulta_update = $conn->prepare('UPDATE videogames SET  
-            name=:name,
-            price=:price,
-            console=:console,
-            description=:description
+            $consulta_update = $conn->prepare('UPDATE videojuegos SET  
+            nombre=:nombre,
+            precio=:precio,
+            consola=:consola,
+            descripcion=:descripcion
             WHERE id = :id'
             );
 
             $consulta_update -> execute(array(
-                ':name' => $name,
-                ':price' => $price,
-                ':console' => $console,
-                ':description' => $description,
+                ':nombre' => $nombre,
+                ':precio' => $precio,
+                ':consola' => $consola,
+                ':descripcion' => $descripcion,
                 ':id' => $id
             ));   
 
         }
         
-    header('Location: /proyectou3y4/portfolio.php');
+        header('Location: /papeleria_web/views/videojuegos/index.php');
+        
     }
 
 
@@ -64,19 +65,19 @@
         <form action="" method="POST" id="formedit">
             <div class="form-group">
                 <label for="recipient-videojuego" class="col-form-label">Videojuego:</label>
-                <input name="name" value="<?php if($result) echo $result['name'];?>" type="text" class="form-control" id="recipient-videojuego">
+                <input name="nombre" value="<?php if($result) echo $result['nombre'];?>" type="text" class="form-control" id="recipient-videojuego">
             </div>
             <div class="form-group">
                 <label for="recipient-precio" class="col-form-label">Precio:</label>
-                <input name="price" value="<?php if($result) echo $result['price'];?>" type="number" class="form-control" id="recipient-precio">
+                <input name="precio" value="<?php if($result) echo $result['precio'];?>" type="number" class="form-control" id="recipient-precio">
             </div>
             <div class="form-group">
                 <label for="recipient-consola" class="col-form-label">Consola:</label>
-                <input name="console" value="<?php if($result) echo $result['console'];?>" type="text" class="form-control" id="recipient-consola">
+                <input name="consola" value="<?php if($result) echo $result['consola'];?>" type="text" class="form-control" id="recipient-consola">
             </div>
             <div class="form-group">
                 <label for="message-text" class="col-form-label">Descripción:</label>
-                <textarea name="description" class="form-control" id="message-text"><?php if($result) echo $result['description'];?></textarea>
+                <textarea name="descripcion" class="form-control" id="message-text"><?php if($result) echo $result['descripcion'];?></textarea>
             </div> 
             <a href="../../portfolio.php" type="submit" class="btn btn-secondary">Cancelar</a>
             <input  name="editar" value="Editar" type="submit" class="btn btn-primary"></input>
