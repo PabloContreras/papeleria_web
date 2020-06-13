@@ -1,0 +1,17 @@
+<?php
+require '/scripts/blog.sql'
+if($_SERVER['REQUEST_METHOD'] == 'POST')
+{
+    $id=$_POST['id'];
+    try {
+        $conexion = new PDO('$servername; $dbname', 'root', '');
+    } catch (PDOException $e) {
+        echo "Error:" . $e->getMessage();
+    }
+    $statement = $conexion->prepare('DELETE FROM blog WHERE id=:id');
+        $statement->execute(array(
+                ':id' => $id
+            ));    
+}
+
+?>
