@@ -21,7 +21,7 @@
 			<div class="collapse navbar-collapse" id="navbarColor01">
 			    <ul class="navbar-nav mr-auto">
 			      	<li class="nav-item">
-			        	<a class="nav-link" href="#">Mascotas</a>
+			        	<a class="nav-link" href="/views/mascotas/index.php">Mascotas</a>
 			      	</li>
 			      	<li class="nav-item">
 			        	<a class="nav-link" href="#">País</a>
