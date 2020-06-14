@@ -30,7 +30,7 @@
 			        	<a class="nav-link" href="#">Videojuegos</a>
 			      	</li>
 			      	<li class="nav-item">
-			        	<a class="nav-link" href="#">Notas</a>
+			        	<a class="nav-link" href="/views/notas/index.php">Notas</a>
 			      	</li>
 			    </ul>
 			</div>
@@ -77,7 +77,7 @@
 						</a>
 					</div>
 					<div class="col-lg-5">
-						<a href="" style="text-decoration: none;">
+						<a href="/views/notas/index.php" style="text-decoration: none;">
 							<div class="card border-primary mb-3">
 								<div class="card-body">
 							    	<h4 class="card-title text-center">Notas</h4>
