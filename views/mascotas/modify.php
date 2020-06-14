@@ -1,21 +1,29 @@
 <?php
-require '/scripts/blog.sql';
-if ($_SERVER['REQUEST_METHOD']== 'POST') {
-    $id = $_POST['id'];
-    $nombre= $_POST['nombre'];
-    $genero= $_POST['genero'];
-try{
-    $conn= new PDO('$servername;$dbname','root','');
+	$dbhost	= "localhost";	   // localhost or IP
+	$dbuser	= "admin";		  // database username
+	$dbpass	= "admin";		     // database password
+	$dbname	= "project"; 
+	
+	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
-}catch(PDOExeption $e){
-    echo "Error:" . $e->getMessage(); 
-}
-$statement = $conn->prepare('UPDATE FROM mascotas SET (Nombre=:nombre,Genero=:genero) WHERE id=:id');
-$statement->execute(array(
-    ':id'=>$id,
-    ':nombre'=>$nombre,
-    ':genero'=>$genero
+	if (!$conn) {
+		die("Connection failed: " . mysqli_connect_error());
+	}
+	
+	$nombre = $_POST['nombre'];
+	$genero = $_POST['genero'];
+	$id = $_GET['id']; 
+	$sql = "UPDATE animales SET Nombre = '$nombre', Genero = '$genero' WHERE id = '$id'";
 
-));
-}
+	if (mysqli_query($conn, $sql)) {
+	    echo "New record created successfully";
+	} else {
+	    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+	}
+
+
+		
+	header("HTTP/1.1 302 Moved Temporarily"); 
+	header("Location: /views/mascotas/index.php");
+	
 ?>

@@ -1,66 +1,179 @@
+<?php 
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap-min.css">
-    <title>Document</title>
-</head>
-<body>
-    <div class="form-group">
-        <fieldset disabled="">
-          <label class="control-label" for="disabledInput">Disabled input</label>
-          <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
-        </fieldset>
+    <head>
+      <title>Bienvenido | <?php echo $_SESSION['name']; ?></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    </head>
+  
+    <body>      
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="/views/turista/index.php"><i class="fas fa-home"></i></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/views/mascotas/index.php">Mascotas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">País</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Videojuegos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Notas</a>
+              </li>
+          </ul>
       </div>
-      
-      <div class="form-group">
-        <fieldset>
-          <label class="control-label" for="readOnlyInput">Readonly input</label>
-          <input class="form-control" id="readOnlyInput" type="text" placeholder="Readonly input here…" readonly="">
-        </fieldset>
-      </div>
-      
-      <div class="form-group has-success">
-        <label class="form-control-label" for="inputSuccess1">Valid input</label>
-        <input type="text" value="correct value" class="form-control is-valid" id="inputValid">
-        <div class="valid-feedback">Success! You've done it.</div>
-      </div>
-      
-      <div class="form-group has-danger">
-        <label class="form-control-label" for="inputDanger1">Invalid input</label>
-        <input type="text" value="wrong value" class="form-control is-invalid" id="inputInvalid">
-        <div class="invalid-feedback">Sorry, that username's taken. Try another?</div>
-      </div>
-      
-      <div class="form-group">
-        <label class="col-form-label col-form-label-lg" for="inputLarge">Large input</label>
-        <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" id="inputLarge">
-      </div>
-      
-      <div class="form-group">
-        <label class="col-form-label" for="inputDefault">Default input</label>
-        <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
-      </div>
-      
-      <div class="form-group">
-        <label class="col-form-label col-form-label-sm" for="inputSmall">Small input</label>
-        <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" id="inputSmall">
-      </div>
-      
-      <div class="form-group">
-        <label class="control-label">Input addons</label>
-        <div class="form-group">
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text">$</span>
+      <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+        <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['name']; ?></button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item" href="">Perfil</a>
+              <a class="dropdown-item" href="/views/base/logout.php">Salir</a>
             </div>
-            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-            <div class="input-group-append">
-              <span class="input-group-text">.00</span>
-            </div>
-          </div>
         </div>
       </div>
-</body>
+    </nav>   
+    <div class="col-lg-10 ml-auto mr-auto mt-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <table class="table table-hover">
+            <thead class="table-primary">
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Género</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php 
+                $conexion = mysqli_connect("localhost","admin","admin","project");
+                $registros = mysqli_query($conexion,"SELECT * FROM animales where turista_id = {$_SESSION['turista_id']}"); 
+                
+                while ( $fila = mysqli_fetch_array($registros) ){
+                  echo '<tr>';
+                  echo '<td>'.$fila ["id"].'</td>';
+                  echo '<td>'.$fila ["Nombre"].'</td>';
+                  echo '<td>'.$fila ["Genero"].'</td>';
+                  echo '<td><button class="btn btn-info" style="background-color: transparent; border: none; padding-top: 0px; padding-bottom: 0px;" data-toggle="modal" data-target="#exampleModal'.$fila ["id"].'"><i class="fas fa-edit mb-2" style="color:black;"></i></a></td>';
+
+                  echo '<td><a href="/views/mascotas/delete.php?id='.$fila ["id"].'"><i class="fas fa-trash-alt" style="color:black;"></i></a></td>';
+                  echo '</tr>';   
+                  echo  '<div class="modal fade" id="exampleModal'.$fila ["id"].'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Editar mascota</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <form method="POST" action="/views/mascotas/modify.php?id='.$fila ["id"].'">
+                              <div class="modal-body">
+                                <div class="col-lg-12">
+                                  <div class="form-group">
+                                    <label class="form-control-label" for="inputSuccess1">Nombre</label>
+                                    <input type="text" class="form-control" name="nombre" value="'.$fila ["Nombre"].'">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="exampleSelect1">Género</label>
+                                    <select class="form-control" required="" name="genero">
+                                      <option disabled=""></option>
+                                      <option { $fila ["Genero"] == "Masculino" ? "selected" : ""}>Masculino</option>
+                                      <option { $fila ["Genero"] == "Femenino" ? "selected" : ""}>Femenino</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </div>
+                            </form>
+                        </div>
+                      </div>
+                  </div>';          
+                }
+               ?>
+            </tbody>
+          </table> 
+        </div>
+        <div class="col-lg-2 my-auto">
+          <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Agregar</button>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Registrar mascota</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <form method="POST" action="/views/mascotas/insert.php">
+                <div class="modal-body">
+                    <div class="col-lg-12"> 
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="form-group">
+                            <label class="form-control-label" for="inputSuccess1">Nombre</label>
+                            <input type="text" class="form-control" name="name">
+                            <!--div class="valid-feedback">Success! You've done it.</div-->
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleSelect1">Género</label>
+                            <select class="form-control" required="" name="genero">
+                              <option disabled="" selected=""></option>
+                              <option>Masculino</option>
+                              <option>Femenino</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <input type="hidden" name="turista_id" value="<?php echo $_SESSION['turista_id']; ?>">
+                      </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                  <button type="submit" class="btn btn-primary">Guardar</button>
+              </div>
+              </form>
+          </div>
+        </div>
+    </div>
+    <footer class="footer fixed-bottom" style="background-color: #1a1a1a;">
+            <div class="row" style="margin-left: 0px; margin-right: 0px;">
+                
+                <div class="col-auto ml-auto text-white mb-5 mt-5">
+                    &copy;<script>document.write(new Date().getFullYear());</script>, Hecho con <i class="fa fa-heart"></i>
+                </div>
+            </div>
+      </footer>
+  
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+      <script type="text/javascript">
+        $('#myModal').on('shown.bs.modal', function () {
+          $('#myInput').trigger('focus')
+      })
+      </script>
+  </body>
 </html>

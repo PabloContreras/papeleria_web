@@ -48,7 +48,7 @@
 			<div class="col-lg-10 col-md-10 col-sm-12 ml-auto mr-auto mt-5">
 				<div class="row justify-content-center mt-5 mb-5"> 
 					<div class="col-lg-5">
-						<a href="" style="text-decoration: none;">
+						<a href="/views/mascotas/index.php" style="text-decoration: none;">
 							<div class="card border-primary mb-3">
 								<div class="card-body">
 							    	<h4 class="card-title text-center">Mascotas</h4>

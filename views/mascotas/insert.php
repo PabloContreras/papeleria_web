@@ -1,23 +1,30 @@
 <?php
-require '/scripts/blog.sql';
-if ($_SERVER['REQUEST_METHOD']== 'POST') {
-    $turista_id = $_POST['turista_id'];
-    $nombre= $_POST['nombre'];
-    $genero= $_POST['genero'];
-try{
-    $conn= new PDO('$servername;$dbname','root','');
+	$dbhost	= "localhost";	   // localhost or IP
+	$dbuser	= "admin";		  // database username
+	$dbpass	= "admin";		     // database password
+	$dbname	= "project"; 
+	
+	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
-}catch(PDOExeption $e){
-    echo "Error:" . $e->getMessage(); 
-}
+	if (!$conn) {
+		die("Connection failed: " . mysqli_connect_error());
+	}
+	
+	$turista_id = $_POST['turista_id'];
+	$nombre = $_POST['name'];
+	$genero = $_POST['genero'];
 
-$statement = $conn->prepare('INSERT INTO mascotas(id,turista_id,Nombre,Genero) VALUES(NUll,:turista_id,:nombre,:genero)');
-$statement->execute(array(
+	$sql = "INSERT INTO animales (turista_id, Nombre, Genero) VALUES ('$turista_id', '$nombre', '$genero')";
 
-    ':turista_id' => $turista_id,
-    ':nombre'=>$nombre,
-    ':genero'=>$genero
+	if (mysqli_query($conn, $sql)) {
+	    echo "New record created successfully";
+	} else {
+	    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+	}
 
-));
-}
+
+		
+	header("HTTP/1.1 302 Moved Temporarily"); 
+	header("Location: /views/mascotas/index.php");
+	
 ?>

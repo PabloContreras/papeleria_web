@@ -1,17 +1,26 @@
 <?php
-require '/scripts/blog.sql';
-if ($_SERVER['REQUEST_METHOD']== 'POST') {
-    $id = $_POST['id'];
-       
-try{
-    $conn= new PDO('$servername;$dbname','root','');
+	$dbhost	= "localhost";	   // localhost or IP
+	$dbuser	= "admin";		  // database username
+	$dbpass	= "admin";		     // database password
+	$dbname	= "project"; 
 
-}catch(PDOExeption $e){
-    echo "Error:" . $e->getMessage(); 
-}
-$statement = $conn->prepare('DELETE FROM mascotas WHERE id = :id');
-$statement->execute(array(
-            ':id' => $id
-        ));
-}
+	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+	if (!$conn) {
+		die("Connection failed: " . mysqli_connect_error());
+	}
+	
+	$id = $_GET['id']; 
+	$sql = "DELETE FROM animales WHERE id = '$id'";
+
+	if (mysqli_query($conn, $sql)) {
+	    echo "New record created successfully";
+	} else {
+	    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+	}
+
+		
+	header("HTTP/1.1 302 Moved Temporarily"); 
+	header("Location: /views/mascotas/index.php");
+	
 ?>
