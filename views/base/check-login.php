@@ -1,15 +1,9 @@
 
 <?php
 	session_start();
-	/* 
 	$dbhost	= "localhost";
 	$dbuser	= "admin";
 	$dbpass	= "admin";
-	$dbname	= "project";
-	*/ 
-	$dbhost	= "localhost";
-	$dbuser	= "root";
-	$dbpass	= "";
 	$dbname	= "project";
 	
 	
@@ -34,12 +28,10 @@
 		$_SESSION['name'] = $row['Name'];
 		$_SESSION['start'] = time();
 		$_SESSION['expire'] = $_SESSION['start'] + (10 * 60);
-		//header("Location: /");
-		header("Location: /proWeb/papeleria_web-master/views/turista/index.php");
+		header("Location: /views/turista/index.php");
 	
 	} else {
-		//header("Location: /");
-		header("Location: /proWeb/papeleria_web-master/");
+		header("Location: /");
 	}
 
 
