@@ -30,24 +30,20 @@ if (!$conn) {
 	$row = mysqli_fetch_assoc($result);
 	$hash = $row['id'];
 
-	$resultPais = mysqli_query($conn, "SELECT turista_id FROM pais WHERE turista_id=$hash");
+    
+    
+    
+    $resultPais = mysqli_query($conn, "SELECT turista_id FROM pais WHERE turista_id=$hash");
 	$rowPais = mysqli_fetch_assoc($resultPais);
-	if ($rowPais != '') {
+	if ($rowPais == '') {
 		# code...
 		echo "<div class='alert alert-warning mt-4' role='alert'>
-					<p>Ya a registrado su pais.****</p>
+					<p>Ya a borrado su pais.****</p>
 					<p><a href='/proWeb/papeleria_web-master/views/turista/'>Turista</a></p>
 				</div>";
-				
 	} else {
 		# code...
-
-		$nombre = $_POST['nombre'];
-		$clima = $_POST['clima'];
-
-		$query = "INSERT INTO pais(turista_id, Nombre, Clima) VALUES ('$hash', '$nombre', '$clima')";
-
-
+        $query="DELETE  FROM pais WHERE turista_id=$hash";        
 
 		if (mysqli_query($conn, $query)) {
 			//header("Location: /");	

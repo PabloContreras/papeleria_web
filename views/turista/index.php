@@ -64,7 +64,7 @@
 						<a href="" style="text-decoration: none;">
 							<div class="card border-primary mb-3">
 								<div class="card-body" >
-									<h4 class="card-title text-center" > <a href="/proWeb/papeleria_web-master/views/pais/">País</a> </h4> 
+									<h4 class="card-title text-center" > <a href="/proWeb/papeleria_web-master/views/pais/">País</a> <br><?php echo $_SESSION['name']; ?> </h4> 
 									
 							  	</div>
 							</div>

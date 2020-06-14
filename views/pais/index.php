@@ -80,8 +80,13 @@ session_start();
                         </div>
 
                     </form>
-                    <!--Prueba -->
 
+                    <!--Prueba -->
+                    <form method="POST" action="/proWeb/papeleria_web-master/views/pais/paisCrud/delete.php">
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-warning">Borrar</button>
+                        </div>
+                    </form>
                     <!--Fin_Prueba -->
 
                 </div>
