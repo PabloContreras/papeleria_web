@@ -6,8 +6,9 @@ session_start();
 
 <head>
     <title>Bienvenido | <?php echo $_SESSION['name']; ?></title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="/proWeb/papeleria_web-master/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="/css/bootstrap.min.css">-->
+    <!--NAtha-->
+    <link rel="stylesheet" href="/proWeb/papeleria_web-master/css/bootstrap.min.css">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,8 +17,9 @@ session_start();
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="views/turista/index.php"><i class="fas fa-home"></i></a>
-        <!-- <a class="navbar-brand" href="/proWeb/papeleria_web-master/views/turista/index.php"><i class="fas fa-home"></i></a> -->
+        <!-- <a class="navbar-brand" href="views/turista/index.php"><i class="fas fa-home"></i></a> -->
+        <!-- NAtha-->
+        <a class="navbar-brand" href="/proWeb/papeleria_web-master/views/turista/index.php"><i class="fas fa-home"></i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,8 +29,9 @@ session_start();
                     <a class="nav-link" href="#">Mascotas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="views/pais/">País</a>
-                    <!-- <a class="nav-link" href="/opt/lampp/htdocs/proWeb/papeleria_web-master/views/pais/">País</a>-->
+                    <!-- <a class="nav-link" href="views/pais/">País</a>-->
+                    <!--Natha-->
+                    <a class="nav-link" href="/proWeb/papeleria_web-master/views/pais/">País</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Videojuegos</a>
@@ -43,8 +46,8 @@ session_start();
                 <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['name']; ?></button>
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                     <a class="dropdown-item" href="">Perfil</a>
-                    <!-- <a class="dropdown-item" href="/proWeb/papeleria_web-master/views/base/logout.php">Salir</a> -->
-                    <a class="dropdown-item" href="/views/base/logout.php">Salir</a>
+                    <!--Natha--> <a class="dropdown-item" href="/proWeb/papeleria_web-master/views/base/logout.php">Salir</a>
+                    <!-- <a class="dropdown-item" href="/views/base/logout.php">Salir</a>-->
                 </div>
             </div>
         </div>
@@ -56,20 +59,31 @@ session_start();
             <div class="row justify-content-center mt-5 mb-5">
                 <div class="page-header">
                     <h1 id="forms">Pais</h1>
-                    <div class="form-group">
-                        <label class="col-form-label" for="inputDefault">Ingresa tu pais</label>
-                        <input type="text" class="form-control" placeholder="Pais" id="inputDefault">
-                    </div>
-                    <div class="form-group">
-                        <select class="custom-select">
-                            <option selected="">Clima</option>
-                            <option value="1">tropical</option>
-                            <option value="2">seco</option>
-                            <option value="3">templado</option>
-                            <option value="4">continental</option>
-                            <option value="5">polar</option>
-                        </select>
-                    </div>
+                    
+                    <form method="POST" action="/proWeb/papeleria_web-master/views/pais/paisCrud/insert.php">
+                        <div class="form-group">
+                            <label class="col-form-label" for="inputDefault">Ingresa tu pais</label>
+                            <input type="text" class="form-control" placeholder="Pais" id="inputDefault" name="nombre">
+                        </div>
+                        <div class="form-group">
+                            <select class="custom-select" name="clima">
+                                <option selected="">Clima</option>
+                                <option value="1">tropical</option>
+                                <option value="2">seco</option>
+                                <option value="3">templado</option>
+                                <option value="4">continental</option>
+                                <option value="5">polar</option>
+                            </select>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-success">Registrar</button>
+                        </div>
+
+                    </form>
+                    <!--Prueba -->
+
+                    <!--Fin_Prueba -->
+
                 </div>
             </div>
         </div>
