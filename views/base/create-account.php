@@ -2,16 +2,11 @@
 	session_start();
 	//include_once './views/base/conn.php';
 	// Connection variables
-	/*$dbhost	= "localhost";	   // localhost or IP
+	$dbhost	= "localhost";	   // localhost or IP
 	$dbuser	= "admin";		  // database username
 	$dbpass	= "admin";		     // database password
 	$dbname	= "project";    // database name
 
-	*/ 
-	$dbhost	= "localhost";
-	$dbuser	= "root";
-	$dbpass	= "";
-	$dbname	= "project";
 	
 	
 	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
@@ -34,7 +29,7 @@
 	if ($count == 1) {
 	echo "<div class='alert alert-warning mt-4' role='alert'>
 					<p>Ese correo ya esta registrado.Por Favor intenta registrarte con otro o intenta iniciar sesion</p>
-					<p><a href='index.html'>Login</a></p>
+					<p><a href='/'>Login</a></p>
 				</div>";
 	} else {	
 	
@@ -53,8 +48,7 @@
 	$query = "INSERT INTO turista(admin_id, Name, Email, Password) VALUES (1, '$name', '$email', '$passHash')";
 
 	if (mysqli_query($conn, $query)) {
-			//header("Location: /");	
-			header("Location: /proWeb/papeleria_web-master/");
+			header("Location: /");
 
 		} else {
 			echo "Error: " . $query . "<br>" . mysqli_error($conn);
