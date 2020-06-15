@@ -1,5 +1,4 @@
- 
-<?php
+<?php 
     $dbhost = "localhost";
     $dbuser = "admin";
     $dbpass = "admin";
@@ -12,7 +11,7 @@
     }
     
     $id = $_GET['id']; 
-    $sql = "DELETE FROM blog WHERE id = '$id'";
+    $sql = "DELETE FROM videojuegos WHERE id = '$id'";
 
     if (mysqli_query($conn, $sql)) {
         echo "New record created successfully";
@@ -22,6 +21,5 @@
 
         
     header("HTTP/1.1 302 Moved Temporarily"); 
-    header("Location: /views/notas/index.php");
-    
+    header("Location: /views/videojuegos/index.php");
 ?>

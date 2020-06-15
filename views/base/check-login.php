@@ -3,8 +3,8 @@
 	session_start();
 	
 	$dbhost	= "localhost";
-	$dbuser	= "root";
-	$dbpass	= "";
+	$dbuser	= "admin";
+	$dbpass	= "admin";
 	$dbname	= "project"; 
 	
 	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
@@ -33,9 +33,7 @@
 		 
 	
 	} else {
-		header("Location: /papeleria_web");
-		//header("Location: /proWeb/papeleria_web-master/");
-	}
+		header("Location: /");	}
 
 
 ?>	
