@@ -43,7 +43,7 @@ CREATE TABLE `videojuegos` (
 `consola` varchar(450) NOT NULL,
 `descripcion` varchar(450) NOT NULL,
 PRIMARY KEY (id),
-FOREIGN KEY(turista_id) REFERENCES turista(id)
+FOREIGN KEY(turista_id) REFERENCES turista(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -58,7 +58,7 @@ CREATE TABLE `animales` (
 `Nombre` varchar(300) NOT NULL,
 `Genero` varchar(300) NOT NULL,
 PRIMARY KEY (id),
-FOREIGN KEY(turista_id) REFERENCES turista(id)
+FOREIGN KEY(turista_id) REFERENCES turista(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -73,7 +73,7 @@ CREATE TABLE `pais` (
 `Nombre` varchar(300) NOT NULL,
 `Clima` varchar(300) NOT NULL,
 PRIMARY KEY (id),
-FOREIGN KEY(turista_id) REFERENCES turista(id)
+FOREIGN KEY(turista_id) REFERENCES turista(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 ALTER TABLE `pais`
@@ -86,7 +86,7 @@ CREATE TABLE `blog` (
 `turista_id` int(99) NOT NULL,
 `content` varchar(300) NOT NULL,
 PRIMARY KEY (id),
-FOREIGN KEY(turista_id) REFERENCES turista(id)
+FOREIGN KEY(turista_id) REFERENCES turista(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 ALTER TABLE `blog`

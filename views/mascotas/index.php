@@ -84,8 +84,10 @@
                               <div class="modal-body">
                                 <div class="col-lg-12">
                                   <div class="form-group">
-                                    <label class="form-control-label" for="inputSuccess1">Nombre</label>
-                                    <input type="text" class="form-control" name="nombre" value="'.$fila ["Nombre"].'">
+                                    <label class="form-control-label" for="nameInput-edit">Nombre</label>
+                                    <input type="text" class="form-control is-valid" name="nombre" value="'.$fila ["Nombre"].'" id="nameInput-edit">
+                                    <div class="valid-feedback" id="name-valid-feedback-edit">Correcto</div>
+                                    <div class="invalid-feedback-edit" id="name-invalid-feedback">Ingresa una consola</div>
                                   </div>
                                   <div class="form-group">
                                     <label for="exampleSelect1">Género</label>
@@ -131,8 +133,10 @@
                       <div class="row">
                         <div class="col-lg-12">
                           <div class="form-group">
-                            <label class="form-control-label" for="inputSuccess1">Nombre</label>
-                            <input type="text" class="form-control" name="name">
+                            <label class="form-control-label" for="nameInput">Nombre</label>
+                            <input type="text" class="form-control" name="name" id="nameInput">
+                            <div class="valid-feedback" id="valid-feedback">Correcto</div>
+                            <div class="invalid-feedback" id="invalid-feedback">Ingresa un valor</div>
                           </div>
                           <div class="form-group">
                             <label for="exampleSelect1">Género</label>
@@ -172,7 +176,67 @@
       <script type="text/javascript">
         $('#myModal').on('shown.bs.modal', function () {
           $('#myInput').trigger('focus')
-      })
+        });
+        // Nombre del juego
+        var nameInput = document.getElementById('nameInput');
+        var validFeedback = document.getElementById('valid-feedback');
+        var invalidFeedback = document.getElementById('invalid-feedback');
+        // Nombre del juego
+        var nameInputEdit = document.getElementById('nameInput-edit');
+        var validFeedbackEdit = document.getElementById('valid-feedback-edit');
+        var invalidFeedbackEdit = document.getElementById('invalid-feedback-edit');
+        function toggleFeedback(){
+            let value = $(nameInput).val();
+
+            // Nombre
+            if (value.length > 0) {
+                $(validFeedback).show();
+                $(nameInput).addClass('is-valid');
+                $(invalidFeedback).hide();
+                $(nameInput).removeClass('is-invalid');
+            }else{
+                $(validFeedback).hide();
+                $(nameInput).removeClass('is-valid');
+                $(invalidFeedback).show();
+                $(nameInput).addClass('is-invalid');
+            }
+        }
+        function toggleFeedbackEdit(){
+            let valueEdit = $(nameInputEdit).val();
+            if (valueEdit.length > 0) {
+                $(validFeedbackEdit).show();
+                $(nameInputEdit).addClass('is-valid');
+                $(invalidFeedbackEdit).hide();
+                $(nameInputEdit).removeClass('is-invalid');
+            }else{
+                $(validFeedbackEdit).hide();
+                $(nameInputEdit).removeClass('is-valid');
+                $(invalidFeedbackEdit).show();
+                $(nameInputEdit).addClass('is-invalid');
+            }
+            
+        }
+        function inicializarComponentes(){
+            // Nombre videojuego
+            $(validFeedback).hide();
+            $(invalidFeedback).hide();
+            $(validFeedbackEdit).show();
+            $(invalidFeedbackEdit).hide();
+        }
+        function agregarEventos(){
+            nameInput.addEventListener('change', function () {
+                toggleFeedback();
+            });
+            
+            nameInputEdit.addEventListener('change', function() {
+                toggleFeedbackEdit();
+            });
+        }
+
+        $(document).ready(function(){
+            inicializarComponentes();
+            agregarEventos();
+        });
       </script>
   </body>
 </html>

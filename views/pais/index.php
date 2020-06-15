@@ -83,11 +83,13 @@ session_start();
                                             <form method="POST" action="update.php?id='.$fila ["id"].'">
                                                 <div class="modal-body">
                                                     <div class="col-lg-12"> 
-                                                        <div class="content mt-5">
+                                                        <div class="row justify-content-center">
                                                             <div class="page-header">                                
                                                                 <div class="form-group">
                                                                     <label class="col-form-label" for="inputDefault">Ingresa tu país</label>
-                                                                    <input type="text" class="form-control" placeholder="País" name="nombre" required="" value='.$fila ["Nombre"].'>
+                                                                    <input type="text" class="form-control is-valid" placeholder="País" name="nombre" required="" value='.$fila ["Nombre"].' id="pais-edit">
+                                                                    <div class="valid-feedback" id="valid-feedback-edit">Correcto</div>
+                                                                    <div class="invalid-feedback" id="invalid-feedback-edit">Ingresa un valor</div>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <select class="custom-select" name="clima" required="">
@@ -134,25 +136,23 @@ session_start();
                 <form method="POST" action="/views/pais/create.php">
                     <div class="modal-body">
                         <div class="col-lg-12"> 
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="content mt-5">
-                                        <div class="page-header">                                
-                                            <div class="form-group">
-                                                <label class="col-form-label" for="inputDefault">Ingresa tu país</label>
-                                                <input type="text" class="form-control" placeholder="País" name="nombre" required="">
-                                            </div>
-                                            <div class="form-group">
-                                                <select class="custom-select" name="clima" required="">
-                                                    <option selected="" disabled="">Clima</option>
-                                                    <option>Tropical</option>
-                                                    <option>Seco</option>
-                                                    <option>Templado</option>
-                                                    <option>Continental</option>
-                                                    <option>Polar</option>
-                                                </select>
-                                            </div>
-                                        </div>
+                            <div class="row justify-content-center">
+                                <div class="page-header">                                
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="pais">Ingresa tu país</label>
+                                        <input type="text" class="form-control" placeholder="País" name="nombre" required="" id="pais">
+                                        <div class="valid-feedback" id="valid-feedback">Correcto</div>
+                                        <div class="invalid-feedback" id="invalid-feedback">Ingresa un valor</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <select class="custom-select" name="clima" required="" id="clima">
+                                            <option selected="" disabled="">Clima</option>
+                                            <option>Tropical</option>
+                                            <option>Seco</option>
+                                            <option>Templado</option>
+                                            <option>Continental</option>
+                                            <option>Polar</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -181,10 +181,72 @@ session_start();
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
     <script type="text/javascript">
         $('#myModal').on('shown.bs.modal', function () {
             $('#myInput').trigger('focus')
-        })
+        });
+        /*
+        **              VALIDACIONES
+        */
+        //        Variables para inserción
+        var paisInput = document.getElementById('pais');
+        var validFeedback = document.getElementById('valid-feedback');
+        var invalidFeedback = document.getElementById('invalid-feedback');
+        //        Variables para edición
+        var paisInputEdit = document.getElementById('pais-edit');
+        var validFeedbackEdit = document.getElementById('valid-feedback-edit');
+        var invalidFeedbackEdit = document.getElementById('invalid-feedback-edit');
+
+        function toggleFeedback(){
+            let value = $(paisInput).val();
+            if (value.length > 0) {
+                $(validFeedback).show();
+                $(paisInput).addClass('is-valid');
+                $(invalidFeedback).hide();
+                $(paisInput).removeClass('is-invalid');
+            }else{
+                $(validFeedback).hide();
+                $(paisInput).removeClass('is-valid');
+                $(invalidFeedback).show();
+                $(paisInput).addClass('is-invalid');
+            }
+        }
+        function toggleFeedbackEdit(){
+            let valueEdit = $(paisInputEdit).val();
+            if (valueEdit.length > 0) {
+                $(validFeedbackEdit).show();
+                $(paisInputEdit).addClass('is-valid');
+                $(invalidFeedbackEdit).hide();
+                $(paisInputEdit).removeClass('is-invalid');
+            }else{
+                $(validFeedbackEdit).hide();
+                $(paisInputEdit).removeClass('is-valid');
+                $(invalidFeedbackEdit).show();
+                $(paisInputEdit).addClass('is-invalid');
+            }
+            
+        }
+
+        function inicializarComponentes(){
+            $(validFeedback).hide();
+            $(invalidFeedback).hide();
+            $(validFeedbackEdit).show();
+            $(invalidFeedbackEdit).hide();
+        }
+        function agregarEventos(){
+            paisInput.addEventListener('change', function () {
+                toggleFeedback();
+            });
+            paisInputEdit.addEventListener('change', function() {
+                toggleFeedbackEdit();
+            })
+        }
+
+        $(document).ready(function(){
+            inicializarComponentes();
+            agregarEventos();
+        });
     </script>
 </body>
 

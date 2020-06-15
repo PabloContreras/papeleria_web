@@ -84,8 +84,10 @@
 										        			<div class="row">
 										        				<div class="col-lg-12">
 											        				<div class="form-group">
-																    	<label for="inputContent">Contenido</label>
-																    	<textarea class="form-control" id="inputContent" rows="3" name="content" required="">'.ucfirst($fila ["content"]).'</textarea>
+																    	<label for="nota-edit">Contenido</label>
+																    	<textarea class="form-control is-valid" id="nota-edit" rows="3" name="content" required="">'.ucfirst($fila ["content"]).'</textarea>
+																    	<div class="valid-feedback" id="valid-feedback-edit">Correcto</div>
+                                                                    	<div class="invalid-feedback" id="invalid-feedback-edit">Ingresa un valor</div>
 																    </div>
 										        				</div>
 										        			</div>
@@ -125,8 +127,10 @@
 				        			<div class="row">
 				        				<div class="col-lg-12">
 					        				<div class="form-group">
-										    	<label for="inputContent">Contenido</label>
-										    	<textarea class="form-control" id="inputContent" rows="3" name="content" required=""></textarea>
+										    	<label for="nota">Contenido</label>
+										    	<textarea class="form-control" id="nota" rows="3" name="content" required=""></textarea>
+										    	<div class="valid-feedback" id="valid-feedback">Correcto</div>
+                                                <div class="invalid-feedback" id="invalid-feedback">Ingresa un valor</div>
 										    </div>
 				        				</div>
 				        			</div>
@@ -159,6 +163,67 @@
 	    	$('#myModal').on('shown.bs.modal', function () {
 	  			$('#myInput').trigger('focus')
 			})
+			/*
+	        **              VALIDACIONES
+	        */
+	        //        Variables para inserción
+	        var notaInput = document.getElementById('nota');
+	        var validFeedback = document.getElementById('valid-feedback');
+	        var invalidFeedback = document.getElementById('invalid-feedback');
+	        //        Variables para edición
+	        var notaInputEdit = document.getElementById('nota-edit');
+	        var validFeedbackEdit = document.getElementById('valid-feedback-edit');
+	        var invalidFeedbackEdit = document.getElementById('invalid-feedback-edit');
+
+	        function toggleFeedback(){
+	            let value = $(notaInput).val();
+	            if (value.length > 0) {
+	                $(validFeedback).show();
+	                $(notaInput).addClass('is-valid');
+	                $(invalidFeedback).hide();
+	                $(notaInput).removeClass('is-invalid');
+	            }else{
+	                $(validFeedback).hide();
+	                $(notaInput).removeClass('is-valid');
+	                $(invalidFeedback).show();
+	                $(notaInput).addClass('is-invalid');
+	            }
+	        }
+	        function toggleFeedbackEdit(){
+	            let valueEdit = $(notaInputEdit).val();
+	            if (valueEdit.length > 0) {
+	                $(validFeedbackEdit).show();
+	                $(notaInputEdit).addClass('is-valid');
+	                $(invalidFeedbackEdit).hide();
+	                $(notaInputEdit).removeClass('is-invalid');
+	            }else{
+	                $(validFeedbackEdit).hide();
+	                $(notaInputEdit).removeClass('is-valid');
+	                $(invalidFeedbackEdit).show();
+	                $(notaInputEdit).addClass('is-invalid');
+	            }
+	            
+	        }
+
+	        function inicializarComponentes(){
+	            $(validFeedback).hide();
+	            $(invalidFeedback).hide();
+	            $(validFeedbackEdit).show();
+	            $(invalidFeedbackEdit).hide();
+	        }
+	        function agregarEventos(){
+	            notaInput.addEventListener('change', function () {
+	                toggleFeedback();
+	            });
+	            notaInputEdit.addEventListener('change', function() {
+	                toggleFeedbackEdit();
+	            })
+	        }
+
+	        $(document).ready(function(){
+	            inicializarComponentes();
+	            agregarEventos();
+	        });
 	    </script>
 	</body>
 </html>

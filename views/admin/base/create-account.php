@@ -12,7 +12,7 @@
 		die("Conexion fallida :( " . mysqli_connect_error());
 	}
 	
-	$checkEmail = "SELECT * FROM turista WHERE Email = '$_POST[email]' ";
+	$checkEmail = "SELECT * FROM admins WHERE Email = '$_POST[email]' ";
 
 	$result = $conn-> query($checkEmail);
 
@@ -31,10 +31,10 @@
 	
 	$passHash = password_hash($pass, PASSWORD_DEFAULT);
 	
-	$query = "INSERT INTO turista(admin_id, Name, Email, Password) VALUES (1, '$name', '$email', '$passHash')";
+	$query = "INSERT INTO admins(Name, Email, Password) VALUES ('$name', '$email', '$passHash')";
 
 	if (mysqli_query($conn, $query)) {
-			header("Location: /");	
+			header("Location: /views/admin/login.html");	
 
 		} else {
 			echo "Error: " . $query . "<br>" . mysqli_error($conn);
