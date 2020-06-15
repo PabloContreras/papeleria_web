@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d85b42fb-52b1-48d7-ab37-24522e98ef2b" name="Default" comment="Terminado" />
+    <list default="true" id="d85b42fb-52b1-48d7-ab37-24522e98ef2b" name="Default" comment="Terminado">
+      <change beforePath="$PROJECT_DIR$/css/styles.portfolio.css" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +47,7 @@
       <workItem from="1592015169967" duration="912000" />
       <workItem from="1592016103904" duration="1086000" />
       <workItem from="1592177978278" duration="1333000" />
-      <workItem from="1592185662008" duration="298000" />
+      <workItem from="1592185662008" duration="690000" />
     </task>
     <task id="LOCAL-00001" summary="videojuegos cora 2">
       <created>1591995397604</created>
@@ -75,7 +77,21 @@
       <option name="project" value="LOCAL" />
       <updated>1592185843072</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Terminado">
+      <created>1592186092502</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1592186092502</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Terminado">
+      <created>1592186238234</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1592186238234</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
