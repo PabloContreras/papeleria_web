@@ -5,7 +5,6 @@
 <html lang="en">
   	<head>
 	    <title>Bienvenido | <?php echo $_SESSION['name']; ?></title>
-		<link rel="stylesheet" href="/css/bootstrap.min.css">
 		<link rel="stylesheet" href="../../css/bootstrap.min.css">
 	    <!-- Required meta tags -->
 	    <meta charset="utf-8">
@@ -15,23 +14,23 @@
   
   	<body>      
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-			<a class="navbar-brand" href="/views/turista/index.php"><i class="fas fa-home"></i></a>
+			<a class="navbar-brand" href="index.php"><i class="fas fa-home"></i></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"></span>
   			</button>
 			<div class="collapse navbar-collapse" id="navbarColor01">
 			    <ul class="navbar-nav mr-auto">
 			      	<li class="nav-item">
-			        	<a class="nav-link" href="#">Mascotas</a>
+			        	<a class="nav-link" href="../mascotas/index.php">Mascotas</a>
 			      	</li>
 			      	<li class="nav-item">
-			        	<a class="nav-link" href="#">País</a>
+			        	<a class="nav-link" href="../paises/index.php">País</a>
 			      	</li>
 			      	<li class="nav-item">
 			        	<a class="nav-link" href="../videojuegos/index.php">Videojuegos</a>
 			      	</li>
 			      	<li class="nav-item">
-			        	<a class="nav-link" href="#">Notas</a>
+			        	<a class="nav-link" href="../notas/index.php">Notas</a>
 			      	</li>
 			    </ul>
 			</div>
@@ -39,8 +38,7 @@
 				<div class="btn-group" role="group">
 				    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['name']; ?></button>
 				    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-						<a class="dropdown-item" href="">Perfil</a>
-						<!-- <a class="dropdown-item" href="/proWeb/papeleria_web-master/views/base/logout.php">Salir</a> -->
+				    	<a class="dropdown-item" href="">Perfil</a>
 				    	<a class="dropdown-item" href="../base/logout.php">Salir</a>
 				    </div>
 				</div>
@@ -50,7 +48,7 @@
 			<div class="col-lg-10 col-md-10 col-sm-12 ml-auto mr-auto mt-5">
 				<div class="row justify-content-center mt-5 mb-5"> 
 					<div class="col-lg-5">
-						<a href="" style="text-decoration: none;">
+						<a href="../mascotas/index.php" style="text-decoration: none;">
 							<div class="card border-primary mb-3">
 								<div class="card-body">
 							    	<h4 class="card-title text-center">Mascotas</h4>
@@ -59,10 +57,10 @@
 						</a>
 					</div>
 					<div class="col-lg-5">
-						<a href="" style="text-decoration: none;">
+						<a href="../paises/index.php" style="text-decoration: none;">
 							<div class="card border-primary mb-3">
-								<div class="card-body" >
-								<h4 class="card-title text-center">Pais</h4>		
+								<div class="card-body">
+							    	<h4 class="card-title text-center">País</h4>
 							  	</div>
 							</div>
 						</a>
@@ -73,13 +71,13 @@
 						<a href="../videojuegos/index.php" style="text-decoration: none;">
 							<div class="card border-primary mb-3">
 								<div class="card-body">
-								<h4 class="card-title text-center">VideoJuego</h4>
+							    	<h4 class="card-title text-center">Videojuegos</h4>
 							  	</div>
 							</div>
 						</a>
 					</div>
 					<div class="col-lg-5">
-						<a href="" style="text-decoration: none;">
+						<a href="../notas/index.php" style="text-decoration: none;">
 							<div class="card border-primary mb-3">
 								<div class="card-body">
 							    	<h4 class="card-title text-center">Notas</h4>
