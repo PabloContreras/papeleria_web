@@ -24,10 +24,10 @@
                         <a class="nav-link" href="/views/mascotas/index.php">Mascotas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">País</a>
+                        <a class="nav-link" href="/views/pais/index.php">País</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/videojuegos/index.php">Videojuegos</a>
+                        <a class="nav-link" href="/views/videojuegos/index.php">Videojuegos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/views/notas/index.php">Notas</a>
@@ -38,7 +38,6 @@
                 <div class="btn-group" role="group">
                     <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['name']; ?></button>
                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                        <a class="dropdown-item" href="">Perfil</a>
                         <a class="dropdown-item" href="/base/logout.php">Salir</a>
                     </div>
                 </div>
@@ -62,7 +61,7 @@
                         <tbody>
                             <?php 
                                 $conexion = mysqli_connect("localhost","admin","admin","project");
-                                $registros = mysqli_query($conexion,"SELECT * FROM videojuegos"); 
+                                $registros = mysqli_query($conexion,"SELECT * FROM videojuegos where turista_id = {$_SESSION['turista_id']}"); 
                                 
                                 while ( $fila = mysqli_fetch_array($registros) ){
                                     echo '<tr>';

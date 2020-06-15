@@ -19,28 +19,28 @@
           <span class="navbar-toggler-icon"></span>
         </button>
       <div class="collapse navbar-collapse" id="navbarColor01">
-          <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="/views/mascotas/index.php">Mascotas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">País</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Videojuegos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Notas</a>
-              </li>
-          </ul>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="/views/mascotas/index.php">Mascotas</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/views/pais/index.php">País</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/views/videojuegos/index.php">Videojuegos</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/views/notas/index.php">Notas</a>
+          </li>
+        </ul>
       </div>
       <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
         <div class="btn-group" role="group">
-            <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['name']; ?></button>
-            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-              <a class="dropdown-item" href="">Perfil</a>
-              <a class="dropdown-item" href="/views/base/logout.php">Salir</a>
-            </div>
+          <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['name']; ?></button>
+          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <a class="dropdown-item" href="">Perfil</a>
+            <a class="dropdown-item" href="/views/base/logout.php">Salir</a>
+          </div>
         </div>
       </div>
     </nav>   
@@ -133,7 +133,6 @@
                           <div class="form-group">
                             <label class="form-control-label" for="inputSuccess1">Nombre</label>
                             <input type="text" class="form-control" name="name">
-                            <!--div class="valid-feedback">Success! You've done it.</div-->
                           </div>
                           <div class="form-group">
                             <label for="exampleSelect1">Género</label>

@@ -20,19 +20,19 @@
   			</button>
 			<div class="collapse navbar-collapse" id="navbarColor01">
 			    <ul class="navbar-nav mr-auto">
-			      	<li class="nav-item">
-			        	<a class="nav-link" href="#">Mascotas</a>
-			      	</li>
-			      	<li class="nav-item">
-			        	<a class="nav-link" href="#">País</a>
-			      	</li>
-			      	<li class="nav-item">
-			        	<a class="nav-link" href="#">Videojuegos</a>
-			      	</li>
-			      	<li class="nav-item">
-			        	<a class="nav-link" href="/views/notas/index.php">Notas</a>
-			      	</li>
-			    </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/views/mascotas/index.php">Mascotas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/views/pais/index.php">País</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/views/videojuegos/index.php">Videojuegos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/views/notas/index.php">Notas</a>
+                    </li>
+                </ul>
 			</div>
 			<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
 				<div class="btn-group" role="group">

@@ -15,23 +15,23 @@ session_start();
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="views/turista/index.php"><i class="fas fa-home"></i></a>
+        <a class="navbar-brand" href="/views/turista/index.php"><i class="fas fa-home"></i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Mascotas</a>
+                    <a class="nav-link" href="/views/mascotas/index.php">Mascotas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="views/pais/index.php">País</a>
+                    <a class="nav-link" href="/views/pais/index.php">País</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Videojuegos</a>
+                    <a class="nav-link" href="/views/videojuegos/index.php">Videojuegos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Notas</a>
+                    <a class="nav-link" href="/views/notas/index.php">Notas</a>
                 </li>
             </ul>
         </div>
@@ -39,7 +39,6 @@ session_start();
             <div class="btn-group" role="group">
                 <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['name']; ?></button>
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                    <a class="dropdown-item" href="">Perfil</a>
                     <a class="dropdown-item" href="/views/base/logout.php">Salir</a>
                 </div>
             </div>

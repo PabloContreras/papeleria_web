@@ -38,8 +38,7 @@
 				<div class="btn-group" role="group">
 				    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['name']; ?></button>
 				    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-						<a class="dropdown-item" href="">Perfil</a>
-				    	<a class="dropdown-item" href="/base/logout.php">Salir</a>
+				    	<a class="dropdown-item" href="/views/base/logout.php">Salir</a>
 				    </div>
 				</div>
 			</div>
