@@ -52,17 +52,93 @@ session_start();
                                 echo '<td>'.$fila ["id"].'</td>';
                                 echo '<td>'.$fila["Name"].'</td>';
                                 echo '<td>'.$fila ["Email"].'</td>';
-                                
+                                echo '<td><button class="btn btn-info" style="background-color:transparent; border: none; padding-top:0px; padding-bottom:0px;" data-toggle="modal" data-target="#exampleModal'.$fila ["id"].'"><i class="fas fa-eye" style="color:black;"></i></a></td>';
+                                echo '<td><a href="/views/admin/delete.php?id='.$fila ["id"].'"><i class="fas fa-trash-alt" style="color:black;"></i></a></td>';
                                 echo '</tr>';       
-                                
-                            }
+                                echo  '<div class="modal fade" id="exampleModal'.$fila ["id"].'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Ver información</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="col-lg-12"> 
+                                                    <div class="row justify-content-center">
+                                                        <div class="page-header">';                                
+                                                            $mascotas = mysqli_query($conexion, "SELECT * FROM animales where turista_id = {$fila ["id"]}");
+                                                            while ( $f = mysqli_fetch_array($mascotas) ){
+                                                                echo '
+                                                                    <div class="row justify-content-center">
+                                                                        <h3>Mascotas</h3>
+                                                                        <div class="col-lg-10">
+                                                                            <p>Nombre: '.$f["Nombre"].'</p>
+                                                                            <p>Género: '.$f["Genero"].'</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <br>
+                                                                ';
+                                                            }
+                                                            $notas = mysqli_query($conexion, "SELECT * FROM blog where turista_id = {$fila ["id"]}");
+                                                            while ( $blog = mysqli_fetch_array($notas) ){
+                                                                echo '
+                                                                    
+                                                                    <div class="row justify-content-center">
+                                                                        <h3>Notas</h3>
+                                                                        <div class="col-lg-10">
+                                                                            <p>Contenido: '.$blog["content"].'</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <br>
+                                                                ';
+                                                            }
+                                                            $videojuego = mysqli_query($conexion, "SELECT * FROM videojuegos where turista_id = {$fila ["id"]}");
+                                                            while ( $vj = mysqli_fetch_array($videojuego) ){
+                                                                echo '
+                                                                <div class="row justify-content-center">
+                                                                    <h3>Videojuegos</h3>
+                                                                    <div class="col-lg-10">
+                                                                        <p>Nombre: '.$vj["nombre"].'</p>
+                                                                        <p>Precio: '.$vj["precio"].'</p>
+                                                                        <p>Consola: '.$vj["consola"].'</p>
+                                                                        <p>Descripción: '.$vj["descripcion"].'</p>
+                                                                    </div>
+                                                                </div>
+                                                                <br>
+                                                                ';
+                                                            }
+                                                            $paises = mysqli_query($conexion, "SELECT * FROM pais where turista_id = {$fila ["id"]}");
+                                                            while ( $pais = mysqli_fetch_array($paises) ){
+                                                                echo '
+                                                                <div class="row justify-content-center">
+                                                                    <h3>Países</h3>
+                                                                    <div class="col-lg-10">
+                                                                        <p>Nombre: '.$pais["Nombre"].'</p>
+                                                                        <p>Clima: '.$pais["Clima"].'</p>
+                                                                    </div>
+                                                                </div>
+                                                                <br>
+                                                                ';
+                                                            }
+                                                   echo '</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>';                    
+                            } 
                          ?>
                     </tbody>
                 </table> 
             </div>
         </div>
     </div>
-
 
     <footer class="footer fixed-bottom" style="background-color: #1a1a1a;">
         <div class="row" style="margin-left: 0px; margin-right: 0px;">
