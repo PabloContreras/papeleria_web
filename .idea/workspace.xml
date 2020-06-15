@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d85b42fb-52b1-48d7-ab37-24522e98ef2b" name="Default" comment="Terminado" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1dFJbsn0zClzXqClsBtvpivH8SW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d85b42fb-52b1-48d7-ab37-24522e98ef2b" name="Default" comment="" />
+      <created>1591921540165</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591921540165</updated>
+      <workItem from="1591921544066" duration="965000" />
+      <workItem from="1591922631428" duration="98000" />
+      <workItem from="1591922946867" duration="87000" />
+      <workItem from="1591995300953" duration="453000" />
+      <workItem from="1592015009388" duration="65000" />
+      <workItem from="1592015111743" duration="27000" />
+      <workItem from="1592015169967" duration="912000" />
+      <workItem from="1592016103904" duration="1086000" />
+      <workItem from="1592177978278" duration="1333000" />
+      <workItem from="1592185662008" duration="298000" />
+    </task>
+    <task id="LOCAL-00001" summary="videojuegos cora 2">
+      <created>1591995397604</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1591995397604</updated>
+    </task>
+    <task id="LOCAL-00002" summary="videojuegos cora 2">
+      <created>1591995656768</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1591995656768</updated>
+    </task>
+    <task id="LOCAL-00003" summary="insertar, modificar, eliminar, listar videojuegos">
+      <created>1592015505935</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1592015505935</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Terminado">
+      <created>1592185843072</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1592185843072</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="videojuegos cora 2" />
+    <MESSAGE value="insertar, modificar, eliminar, listar videojuegos" />
+    <MESSAGE value="Terminado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Terminado" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="402" y="0" key="#PHP" timestamp="1592016334293">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="402" y="0" key="#PHP/0.0.1366.728@0.0.1366.728" timestamp="1592016334293" />
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592016793237">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1592016793237" />
+    <state x="310" y="0" key="CommitChangelistDialog2" timestamp="1592186091509">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="310" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592186091509" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1592178079513">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592178079513" />
+    <state x="184" y="9" key="SettingsEditor" timestamp="1592016175378">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592016175378" />
+    <state x="275" y="93" key="Vcs.Push.Dialog.v2" timestamp="1592186104813">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="93" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592186104813" />
+    <state x="384" y="137" key="git4idea.merge.GitPullDialog" timestamp="1592185909797">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="384" y="137" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1592185909797" />
+  </component>
+</project>
