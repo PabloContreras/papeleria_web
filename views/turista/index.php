@@ -22,7 +22,7 @@
 			<div class="collapse navbar-collapse" id="navbarColor01">
 			    <ul class="navbar-nav mr-auto">
 			      	<li class="nav-item">
-			        	<a class="nav-link" href="#">Mascotas</a>
+			        	<a class="nav-link" href="/views/mascotas/index.php">Mascotas</a>
 			      	</li>
 			      	<li class="nav-item">
 			        	<a class="nav-link" href="#">País</a>
@@ -31,7 +31,7 @@
 			        	<a class="nav-link" href="../videojuegos/index.php">Videojuegos</a>
 			      	</li>
 			      	<li class="nav-item">
-			        	<a class="nav-link" href="#">Notas</a>
+			        	<a class="nav-link" href="/views/notas/index.php">Notas</a>
 			      	</li>
 			    </ul>
 			</div>
@@ -50,7 +50,7 @@
 			<div class="col-lg-10 col-md-10 col-sm-12 ml-auto mr-auto mt-5">
 				<div class="row justify-content-center mt-5 mb-5"> 
 					<div class="col-lg-5">
-						<a href="" style="text-decoration: none;">
+						<a href="/views/mascotas/index.php" style="text-decoration: none;">
 							<div class="card border-primary mb-3">
 								<div class="card-body">
 							    	<h4 class="card-title text-center">Mascotas</h4>
@@ -79,7 +79,7 @@
 						</a>
 					</div>
 					<div class="col-lg-5">
-						<a href="" style="text-decoration: none;">
+						<a href="/views/notas/index.php" style="text-decoration: none;">
 							<div class="card border-primary mb-3">
 								<div class="card-body">
 							    	<h4 class="card-title text-center">Notas</h4>
