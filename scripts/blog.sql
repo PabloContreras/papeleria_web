@@ -41,6 +41,7 @@ CREATE TABLE `videojuegos` (
 `Nombre` varchar(300) NOT NULL,
 `Precio` varchar(300) NOT NULL,
 `consola` varchar(450) NOT NULL,
+`descripcion` varchar(450) NOT NULL,
 PRIMARY KEY (id),
 FOREIGN KEY(turista_id) REFERENCES turista(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -92,4 +93,4 @@ ALTER TABLE `blog`
 MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 
-insert into admins values(1, 'Pablo Contreras', 'pablo_contreras_1997@outlook.com', 'Lapatita9');
+insert into admins values(1, 'Admin', 'admin@gmail.com', 'admin123');
