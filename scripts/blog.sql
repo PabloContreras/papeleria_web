@@ -38,9 +38,10 @@ MODIFY `id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 CREATE TABLE `videojuegos` (
 `id` int(99) NOT NULL,
 `turista_id` int(99) NOT NULL,
-`Nombre` varchar(300) NOT NULL,
-`Precio` varchar(300) NOT NULL,
+`nombre` varchar(300) NOT NULL,
+`precio` varchar(300) NOT NULL,
 `consola` varchar(450) NOT NULL,
+`descripcion` varchar(450) NOT NULL,
 PRIMARY KEY (id),
 FOREIGN KEY(turista_id) REFERENCES turista(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

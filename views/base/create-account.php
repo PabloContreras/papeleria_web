@@ -1,11 +1,18 @@
 <?php
 	session_start();
-	//include_once './views/base/conn.php';
+	include_once './views/base/conn.php';
 	// Connection variables
+/*
 	$dbhost	= "localhost";	   // localhost or IP
 	$dbuser	= "admin";		  // database username
 	$dbpass	= "admin";		     // database password
 	$dbname	= "project";    // database name
+*/	
+	$dbhost	= "localhost";
+	$dbuser	= "root";
+	$dbpass	= "";
+	$dbname	= "project";
+
 	
 	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
@@ -46,7 +53,9 @@
 	$query = "INSERT INTO turista(admin_id, Name, Email, Password) VALUES (1, '$name', '$email', '$passHash')";
 
 	if (mysqli_query($conn, $query)) {
-			header("Location: /");		
+			header("Location: /papeleria_web/views/turista/index.php");	
+			//header("Location: /proWeb/papeleria_web-master/"):
+
 		} else {
 			echo "Error: " . $query . "<br>" . mysqli_error($conn);
 		}	
