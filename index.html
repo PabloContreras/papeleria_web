@@ -4,6 +4,7 @@
         <title>Bienvenido</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;1,100&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <style type="text/css">
             input {
                 border: 1px solid white !important;
@@ -11,88 +12,120 @@
             body {
                 font-family: 'Raleway', sans-serif !important;
             }
+            .header{
+                background-image: url('../img/banner.png');
+                height: 605px;
+            }
         </style>
     </head>
     <body>
-        <div class="col-lg-8 ml-auto mr-auto mt-5">
-            <div class="row my-auto"> 
-                <div class="col-lg-12">
-                    <div class="card text-white bg-primary mb-3">
-                        <div class="card-header text-center">
-                            <div class="row justify-content-center">
-                                <div class="col-auto ml-auto">
-                                    <div class="card-title">
-                                        Bienvenido
+
+
+        <div class="row header" style="margin-left: 0px; margin-right: 0px;">
+            <div class="col-lg-12 my-auto">
+                <div class="row">
+                    <h1 class="mx-auto" style="color: white;"><b>Bienvenido</b></h1><br>                
+                    
+                </div>
+                <div class="row">
+                    <button class="btn btn-success mx-auto" data-toggle="modal" data-target="#exampleModal">Entrar</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card text-white bg-primary mb-3">
+                            <div class="card-header text-center">
+                                <div class="row justify-content-center">
+                                    <div class="col-auto ml-auto">
+                                        <div class="card-title">
+                                            Bienvenido
+                                        </div>
+                                    </div>
+                                    <div class="col-auto ml-auto">
+                                        <div class="form-group">
+                                            <div class="custom-control custom-switch">
+                                                <input type="checkbox" class="custom-control-input" id="login-register" checked="">
+                                                <label class="custom-control-label" for="login-register">
+                                                    <p id="login-legend">Registrarme</p>
+                                                    <p id="register-legend">Iniciar sesión</p>
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-auto ml-auto">
-                                    <div class="form-group">
-                                        <div class="custom-control custom-switch">
-                                            <input type="checkbox" class="custom-control-input" id="login-register" checked="">
-                                            <label class="custom-control-label" for="login-register">
-                                                <p id="login-legend">Registrarme</p>
-                                                <p id="register-legend">Iniciar sesión</p>
-                                            </label>
+                            </div>
+                            <div class="card-body" id="login">                            
+                                <div class="col-lg-12">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-10">
+                                            <form method="POST" action="views/base/check-login.php">
+                                                <div class="form-group">
+                                                    <label for="emailLogin">Correo Electrónico</label>
+                                                    <input type="email" class="form-control" id="emailLogin" aria-describedby="emailHelp" placeholder="Ingresa tu correo electrónico" name="email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="contraseñaLogin">Contraseña</label>
+                                                    <input type="password" class="form-control" id="contraseñaLogin" placeholder="Ingresa tu contraseña" name="password">
+                                                </div>
+                                                <div class="form-group text-center">
+                                                    <button type="submit" class="btn btn-success">Entrar</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body" id="register">
+                                <div class="col-lg-12">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-10">
+                                            <form method="POST" action="views/base/create-account.php">
+                                                <div class="form-group">
+                                                    <label class="col-form-label" for="nombre">Nombre</label>
+                                                    <input type="text" class="form-control" placeholder="Ingresa tu nombre" id="name" name="name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="emailLogin">Correo Electrónico</label>
+                                                    <input type="email" class="form-control" id="emailRegister" aria-describedby="emailHelp" placeholder="Ingresa tu correo electrónico" name="email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="contraseñaLogin">Contraseña</label>
+                                                    <input type="password" class="form-control" id="contraseñaRegister" placeholder="Ingresa tu contraseña" name="password">
+                                                </div>
+                                                <div class="form-group text-center">
+                                                    <button type="submit" class="btn btn-success">Registrar</button>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body" id="login">                            
-                            <div class="col-lg-12">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-6">
-                                        <form method="POST" action="views/base/check-login.php">
-                                            <div class="form-group">
-                                                <label for="emailLogin">Correo Electrónico</label>
-                                                <input type="email" class="form-control" id="emailLogin" aria-describedby="emailHelp" placeholder="Ingresa tu correo electrónico" name="email">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="contraseñaLogin">Contraseña</label>
-                                                <input type="password" class="form-control" id="contraseñaLogin" placeholder="Ingresa tu contraseña" name="password">
-                                            </div>
-                                            <div class="form-group text-center">
-                                                <button type="submit" class="btn btn-success">Entrar</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body" id="register">
-                            <div class="col-lg-12">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-6">
-                                        <form method="POST" action="views/base/create-account.php">
-                                            <div class="form-group">
-                                                <label class="col-form-label" for="nombre">Nombre</label>
-                                                <input type="text" class="form-control" placeholder="Ingresa tu nombre" id="name" name="name">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="emailLogin">Correo Electrónico</label>
-                                                <input type="email" class="form-control" id="emailRegister" aria-describedby="emailHelp" placeholder="Ingresa tu correo electrónico" name="email">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="contraseñaLogin">Contraseña</label>
-                                                <input type="password" class="form-control" id="contraseñaRegister" placeholder="Ingresa tu contraseña" name="password">
-                                            </div>
-                                            <div class="form-group text-center">
-                                                <button type="submit" class="btn btn-success">Registrar</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="/views/admin/login.html" class="btn btn-success">Entrar como administrador</a>
                     </div>
                 </div>
             </div>
-            <div class="row my-auto">
-                <div class="col-auto ml-auto"> 
-                    <a href="/views/admin/login.html" class="btn btn-success">Entrar como administrador</a>
+        </div>
+        <footer class="footer" style="background-color: #1a1a1a;">
+            <div class="row" style="margin-left: 0px; margin-right: 0px;">
+
+                <div class="col-auto ml-auto text-white mb-4 mt-4">
+                    &copy;<script>
+                        document.write(new Date().getFullYear());
+                    </script>, Hecho con <i class="fa fa-heart heart"></i>
                 </div>
             </div>
-        </div>
+        </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
